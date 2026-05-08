@@ -34,8 +34,9 @@ Save both files somewhere accessible on your computer.
 ## How to install — Claude Code
 
 1. Download the `.skill` file from the [latest release](https://github.com/daniel-midnight-founder/-x-analytics-analyzer/releases/latest)
-2. Place it in `~/.claude/skills/` on your computer
-3. The skill will appear when you type `/` in Claude Code
+2. Unzip the file
+3. Move the unzipped folder to `~/.claude/skills/` on your computer
+4. The skill will appear when you type `/` in Claude Code
 
 ## How to install — Claude Desktop
 
