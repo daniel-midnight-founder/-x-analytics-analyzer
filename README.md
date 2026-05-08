@@ -17,16 +17,18 @@ You need to export your analytics data from X first.
 
 1. Log in to [X](https://x.com)
 2. Go to **Analytics** at [x.com/i/account_analytics](https://x.com/i/account_analytics)
-3. Click **Export data** (top right)
-4. Download the **Account content analytics** CSV
+3. Click **Content**
+4. Click **Export data** (top right)
+5. Download the **Account content analytics** CSV
 
 ![Content Analytics Export](/images/content_analytics_download.png)
 
 ### Step 2 — Export Overview Analytics
 
 1. In the same Analytics section, go to **Posts** or the Overview tab
-2. Click **Export data** again
-3. Download the **Account overview analytics** CSV
+2. Click **Posts** or **Overview**
+3. Click **Export data** (top right)
+4. Download the **Account overview analytics** CSV
 
 ![Overview Analytics Export](/images/overview_analytics_download.png)
 
