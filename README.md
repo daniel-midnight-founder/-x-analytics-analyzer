@@ -11,12 +11,12 @@ A Claude Code skill that analyzes your X/Twitter analytics exports and generates
 
 ## Before you start
 
-You need to export your analytics data from X Creator Studio first.
+You need to export your analytics data from X first.
 
 ### Step 1 — Export Content Analytics
 
-1. Log in to [X Creator Studio](https://studio.x.com)
-2. Go to **Analytics** → **Content**
+1. Log in to [X](https://x.com)
+2. Go to **Analytics** at [x.com/i/account_analytics](https://x.com/i/account_analytics)
 3. Click **Export data** (top right)
 4. Download the **Account content analytics** CSV
 
