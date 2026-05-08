@@ -32,11 +32,18 @@ You need to export your analytics data from X Creator Studio first.
 
 Save both files somewhere accessible on your computer.
 
-## How to install
+## How to install — Claude Code
 
 1. Download the `.skill` file from the [latest release](https://github.com/daniel-midnight-founder/-x-analytics-analyzer/releases/latest)
-2. In Claude Code, go to **Settings** → **Skills**
-3. Click **Install skill** and select the downloaded `.skill` file
+2. Place it in `~/.claude/skills/` on your computer
+3. The skill will appear when you type `/` in Claude Code
+
+## How to install — Claude Desktop
+
+1. Download the `.skill` file from the [latest release](https://github.com/daniel-midnight-founder/-x-analytics-analyzer/releases/latest)
+2. Unzip the file
+3. Move the unzipped folder to your Claude Desktop skills directory
+4. The skill will be available when you type `/` in Claude Desktop
 
 ## How to use
 
