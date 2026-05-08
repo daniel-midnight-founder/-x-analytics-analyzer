@@ -66,10 +66,6 @@ The report will be generated and saved to your desktop.
 - **Flopped posts** — high reach but low engagement
 - **Recommendations** — do more / do less / do differently
 
-## Built with
-
-The [Twitter Simplified](https://twittersimplified.com) framework by Stijn Noorman. The analysis, content categorization, and recommendations are grounded in his growth system.
-
 ---
 
 Questions or feedback? Open an issue on GitHub.
