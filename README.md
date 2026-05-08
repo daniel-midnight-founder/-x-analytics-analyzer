@@ -41,9 +41,11 @@ Save both files somewhere accessible on your computer.
 ## How to install — Claude Desktop
 
 1. Download the `.skill` file from the [latest release](https://github.com/daniel-midnight-founder/-x-analytics-analyzer/releases/latest)
-2. Unzip the file
-3. Move the unzipped folder to your Claude Desktop skills directory
-4. The skill will be available when you type `/` in Claude Desktop
+2. In Claude Desktop, click **Customize** in the left panel
+3. Click **Skills** in the left sidebar, then click the **+**
+4. Select **Create Skill → Upload a skill**
+5. Navigate to the downloaded `.skill` file and select it
+6. The skill will be available when you type `/` in Claude Desktop
 
 ## How to use
 
