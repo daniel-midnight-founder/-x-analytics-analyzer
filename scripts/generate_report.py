@@ -109,7 +109,7 @@ def build_html(data):
     funnel_html = f'''
     <div class="funnel-grid">
       <div class="funnel-card">
-        <div class="funnel-number">{pcr:.1f}%</div>
+        <div class="funnel-number">{pcr:.2f}%</div>
         <div class="funnel-label">Profile click rate</div>
         <div class="funnel-note">impressions that led to profile visits</div>
       </div>
