@@ -70,4 +70,4 @@ The report will be generated and saved to your desktop.
 
 ---
 
-Questions or feedback? Open an issue on GitHub.
+Questions or feedback? [Open an issue](https://github.com/daniel-midnight-founder/-x-analytics-analyzer/issues) or [DM me on X @MnFounder](https://x.com/MnFounder).
