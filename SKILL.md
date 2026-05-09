@@ -43,14 +43,14 @@ Note: X Creator Studio exports typically include columns like:
 
 ## STAGE 2: DATA PROCESSING
 
-Parse the CSV and extract:
-- Total posts analyzed
-- Date range of the export
-- Overall averages (impressions, engagement rate, new followers per post)
-- Best performing post overall
-- Posts sorted by each key metric
+**IMPORTANT: Always use the bundled scripts. Do NOT process the CSV inline or write custom Python code to parse it.**
 
-Use the bundled `scripts/analyze_csv.py` to process the CSV, or process inline with Python.
+Run this command to process the CSV:
+```bash
+python scripts/analyze_csv.py /path/to/account_content_analytics.csv /path/to/output.json
+```
+
+This will output JSON to the specified file path. Use that JSON for the next stage.
 
 ---
 
@@ -137,7 +137,12 @@ Based on the analysis, provide:
 
 ## STAGE 5: GENERATE THE HTML REPORT
 
-After analysis, compile everything into JSON and use the bundled script to generate a styled HTML report.
+**IMPORTANT: Always use the bundled script to generate the HTML report. Do NOT write HTML directly.**
+
+Run this command to generate the HTML:
+```bash
+python scripts/generate_report.py --input /path/to/data.json --output /path/to/report.html
+```
 
 ### JSON Structure
 
