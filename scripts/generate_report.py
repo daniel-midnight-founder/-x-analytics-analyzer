@@ -2,7 +2,6 @@
 """
 X Analytics Report Generator
 Takes a JSON file with X analytics data and outputs a styled HTML report.
-Built on Twitter Simplified principles.
 """
 import json, argparse, os
 from datetime import datetime
@@ -41,20 +40,19 @@ def build_html(data):
     def build_post_card(post):
         color = get_perf_color(post.get("engagement_rate", 0))
         ct_color = get_content_type_color(post.get("content_type", ""))
-        return f'''
-        <div class="post-card">
-          <div class="post-text">{post.get("text", "")}</div>
-          <div class="post-meta">
-            <span class="meta-item imp">{post.get("impressions", 0):,} imp</span>
-            <span class="meta-item eng" style="color:{color}">{post.get("engagement_rate", 0)}% eng</span>
-            <span class="meta-item flw">{post.get("new_followers", 0)} followers</span>
-          </div>
-          <div class="post-tags">
-            <span class="ct-tag" style="color:{ct_color};border-color:{ct_color}">{post.get("content_type", "other")}</span>
-            <span class="hook-tag">{post.get("hook_type", "none")}</span>
-          </div>
-          <div class="post-note">{post.get("note", "")}</div>
-        </div>'''
+        return f'''<div class="post-card">
+  <div class="post-text">{post.get("text", "")}</div>
+  <div class="post-meta">
+    <span class="meta-item imp">{post.get("impressions", 0):,} imp</span>
+    <span class="meta-item eng" style="color:{color}">{post.get("engagement_rate", 0)}% eng</span>
+    <span class="meta-item flw">{post.get("new_followers", 0)} followers</span>
+  </div>
+  <div class="post-tags">
+    <span class="ct-tag" style="color:{ct_color};border-color:{ct_color}">{post.get("content_type", "other")}</span>
+    <span class="hook-tag">{post.get("hook_type", "none")}</span>
+  </div>
+  <div class="post-note">{post.get("note", "")}</div>
+</div>'''
 
     top_imp_html = "".join(build_post_card(p) for p in d.get("top_posts", {}).get("by_impressions", []))
     top_eng_html = "".join(build_post_card(p) for p in d.get("top_posts", {}).get("by_engagement", []))
@@ -65,24 +63,22 @@ def build_html(data):
     for ct, stats in d.get("content_performance", {}).items():
         color = get_perf_color(stats.get("avg_engagement_rate", 0))
         ct_color = get_content_type_color(ct)
-        cp_html += f'''
-        <div class="cp-row">
-          <span class="cp-type" style="color:{ct_color}">{ct}</span>
-          <span class="cp-count">{stats.get("count", 0)} posts</span>
-          <span class="cp-imp">{stats.get("avg_impressions", 0):.0f} avg imp</span>
-          <span class="cp-eng" style="color:{color}">{stats.get("avg_engagement_rate", 0)}%</span>
-        </div>'''
+        cp_html += f'''<div class="cp-row">
+  <span class="cp-type" style="color:{ct_color}">{ct}</span>
+  <span class="cp-count">{stats.get("count", 0)} posts</span>
+  <span class="cp-imp">{stats.get("avg_impressions", 0):.0f} avg imp</span>
+  <span class="cp-eng" style="color:{color}">{stats.get("avg_engagement_rate", 0)}%</span>
+</div>'''
 
     # Best days
     bd_html = ""
     for day in d.get("best_days", []):
         color = get_perf_color(day.get("avg_engagement_rate", 0))
-        bd_html += f'''
-        <div class="day-row">
-          <span class="day-name">{day.get("day", "")}</span>
-          <span class="day-imp">{day.get("avg_impressions", 0):.0f} avg imp</span>
-          <span class="day-eng" style="color:{color}">{day.get("avg_engagement_rate", 0)}% eng</span>
-        </div>'''
+        bd_html += f'''<div class="day-row">
+  <span class="day-name">{day.get("day", "")}</span>
+  <span class="day-imp">{day.get("avg_impressions", 0):.0f} avg imp</span>
+  <span class="day-eng" style="color:{color}">{day.get("avg_engagement_rate", 0)}% eng</span>
+</div>'''
 
     # Hook analysis
     ha = d.get("hook_analysis", {})
@@ -92,33 +88,31 @@ def build_html(data):
     # Flopped
     flopped_html = ""
     for p in d.get("flopped_posts", []):
-        flopped_html += f'''
-        <div class="flop-card">
-          <div class="post-text">{p.get("text", "")}</div>
-          <div class="post-meta">
-            <span class="meta-item imp">{p.get("impressions", 0):,} imp</span>
-            <span class="meta-item eng" style="color:#EF4444">{p.get("engagement_rate", 0)}% eng</span>
-            <span class="hook-tag">{p.get("hook_type", "none")}</span>
-          </div>
-          <div class="flop-issue">{p.get("issue", "")}</div>
-        </div>'''
+        flopped_html += f'''<div class="flop-card">
+  <div class="post-text">{p.get("text", "")}</div>
+  <div class="post-meta">
+    <span class="meta-item imp">{p.get("impressions", 0):,} imp</span>
+    <span class="meta-item eng" style="color:#EF4444">{p.get("engagement_rate", 0)}% eng</span>
+    <span class="hook-tag">{p.get("hook_type", "none")}</span>
+  </div>
+  <div class="flop-issue">{p.get("issue", "")}</div>
+</div>'''
 
     # Growth funnel
     pcr = gf.get("profile_click_rate", 0)
     fcr = gf.get("follower_conversion_rate", 0)
-    funnel_html = f'''
-    <div class="funnel-grid">
-      <div class="funnel-card">
-        <div class="funnel-number">{pcr:.1f}%</div>
-        <div class="funnel-label">Profile click rate</div>
-        <div class="funnel-note">impressions that led to profile visits</div>
-      </div>
-      <div class="funnel-card">
-        <div class="funnel-number">{fcr:.2f}%</div>
-        <div class="funnel-label">Follower conversion</div>
-        <div class="funnel-note">impressions that led to new follows</div>
-      </div>
-    </div>'''
+    funnel_html = f'''<div class="funnel-grid">
+  <div class="funnel-card">
+    <div class="funnel-number">{pcr:.2f}%</div>
+    <div class="funnel-label">Profile click rate</div>
+    <div class="funnel-note">impressions that led to profile visits</div>
+  </div>
+  <div class="funnel-card">
+    <div class="funnel-number">{fcr:.2f}%</div>
+    <div class="funnel-label">Follower conversion</div>
+    <div class="funnel-note">impressions that led to new follows</div>
+  </div>
+</div>'''
 
     # Recommendations
     def build_rec(item):
@@ -173,6 +167,7 @@ body{{font-family:'DM Sans',sans-serif;background:#0A0A0F;color:#E2E8F0;line-hei
 .post-note{{font-size:12px;color:#64748B;font-style:italic}}
 
 .cp-row{{display:grid;grid-template-columns:120px 80px 100px 60px;gap:8px;align-items:center;padding:12px 16px;border-bottom:1px solid rgba(255,255,255,0.04);font-size:14px}}
+.cp-header-row{{display:grid;grid-template-columns:120px 80px 100px 60px;gap:8px;align-items:center;padding:8px 16px;font-family:'Space Mono',monospace;font-size:11px;text-transform:uppercase;color:#64748B;border-bottom:1px solid rgba(255,255,255,0.08)}}
 .cp-type{{font-weight:500;text-transform:capitalize}}
 .cp-count{{color:#64748B}}
 .cp-imp{{color:#94A3B8}}
