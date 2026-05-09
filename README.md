@@ -20,10 +20,14 @@ You need to export your analytics data from X first.
 3. Click **Content**
 4. Download the **Account content analytics** CSV
 
+![Content Analytics Export](/images/content_analytics_download.png)
+
 ### Step 2 — Export Overview Analytics
 
 1. In the same Analytics section, go to **Overview** tab
 2. Download the **Account overview analytics** CSV
+
+![Overview Analytics Export](/images/overview_analytics_download.png)
 
 Save both files somewhere accessible on your computer.
 
