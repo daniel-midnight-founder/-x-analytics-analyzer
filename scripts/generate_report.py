@@ -2,7 +2,6 @@
 """
 X Analytics Report Generator
 Takes a JSON file with X analytics data and outputs a styled HTML report.
-Built on Twitter Simplified principles.
 """
 import json, argparse, os
 from datetime import datetime

@@ -53,7 +53,7 @@ def hook_type(text):
     return 'none'
 
 def categorize(text):
-    """Categorize content using Stijn Noorman's Twitter Simplified framework."""
+    """Categorize content into types based on structure and keywords."""
     text_lower = text.lower()
     lines = text.strip().split('\n')
 
@@ -248,11 +248,11 @@ def main():
                 'data': f"{worst_type[1][1]} posts at {worst_type[1][0]:.1f}% engagement"
             })
 
-    # Book-based insight: below 3000 followers, commenting is the growth engine
+    # Below 3000 followers, commenting is typically the growth engine
     if reply_count / len(posts) > 0.8 and follower_count < 20:
         do_differently.append({
             'action': 'Your reply strategy is correct for your follower stage',
-            'why': 'Below 3000 followers, commenting drives most growth per Twitter Simplified',
+            'why': 'Below 3000 followers, commenting drives most organic growth',
             'data': f"{reply_count}/{len(posts)} posts are replies. Keep commenting on creator posts in your niche."
         })
 

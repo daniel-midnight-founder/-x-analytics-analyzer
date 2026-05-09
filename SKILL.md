@@ -58,7 +58,7 @@ Use the bundled `scripts/analyze_csv.py` to process the CSV, or process inline w
 
 Run these analyses on the data:
 
-### Growth Funnel Analysis (from Twitter Simplified)
+### Growth Funnel Analysis
 Map every post to the growth funnel:
 - **Awareness** (getting seen) — high impressions, any engagement
 - **Consideration** (getting clicks) — profile clicks from impressions
@@ -66,14 +66,15 @@ Map every post to the growth funnel:
 
 Identify which posts drive each stage. High impressions but low profile clicks = hook problem. High clicks but no followers = profile problem.
 
-### Content Type Performance (Twitter Simplified framework)
-Categorize using Stijn's framework:
+### Content Type Performance
+Categorize each post into one of these types:
 - **Authority** — shows expertise, establishes credibility and trust. Example: "The one thing most developers get wrong about API design."
 - **Growth** — simple self-improvement value. Example: "Ship faster by doing less."
 - **Personality** — shows authenticity, connects personally. Example: "I spent 3 hours on this tweet and it flopped."
 - **Reply** — engaging with others' content (not original tweets)
 - **Thread** — multi-tweet long-form content
 - **Question** — asks the audience something
+- **Other** — doesn't fit the above categories
 
 Calculate avg impressions and engagement rate per category.
 
