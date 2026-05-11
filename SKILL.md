@@ -74,8 +74,11 @@ Categorize each post into one of these types:
 - **Reply** — engaging with others' content (not original tweets)
 - **Thread** — multi-tweet long-form content
 - **Question** — asks the audience something
+- **Other** — doesn't fit the above categories
 
 Calculate avg impressions and engagement rate per category.
+
+Treat impressions as distribution context, not proof of quality. High impressions mean X showed the post to a lot of people — they say nothing about whether the content was actually good. Quality is proven by engagement rate, follower conversion, and hook effectiveness.
 
 ### Top Posts by Impressions
 - Sort all posts by impressions descending
